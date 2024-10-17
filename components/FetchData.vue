@@ -19,10 +19,9 @@
         <!-- prime vue component -->
         <TreeTable
             :value="treeNodes"
+            resizable-columns
+            row-hover
             size="small"
-            resizable-columns="true"
-            data-key="id"
-            row-hover="true"
             show-gridlines
         >
             <Column field="title" header="🏷️ Title" expander />
@@ -46,7 +45,6 @@ function generateTreeNodes(items) {
             title: item.title,
             type: Object.keys(item)[0],
             route: item.route,
-            expander: item.items ? true : false,
         },
         children: item.items ? generateTreeNodes(item.items) : null,
     }));
