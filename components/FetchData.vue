@@ -19,6 +19,7 @@
         <!-- prime vue component -->
         <TreeTable
             :value="treeNodes"
+            :data-key="'key'"
             resizable-columns
             row-hover
             size="small"
@@ -40,6 +41,7 @@ const { app } = await queryContent("data/app.data").findOne();
 // only needed to fit to primevue TreeTable component
 function generateTreeNodes(items) {
     return items.map((item) => ({
+        key: item.id,
         data: {
             id: item.id,
             title: item.title,
