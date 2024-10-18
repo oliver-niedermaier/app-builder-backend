@@ -41,7 +41,7 @@
                 :header="!item.settings.noHeader ? item.title : null"
                 :toggleable="item.settings.collapsible"
             >
-                <ComponentFactory", :items="item.items" />
+                <ComponentFactory :items="item.items" />
             </Panel>
         </div>
     </main>
