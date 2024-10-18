@@ -45,8 +45,11 @@
                     </template>
                 </Column>
                 <Column field="route" header="🔗 Route">
-                    <template v-if="row.node.data.route" #body="row">
-                        <div style="display: grid; justify-items: start">
+                    <template #body="row">
+                        <div
+                            v-if="row.node.data.route"
+                            style="display: grid; justify-items: start"
+                        >
                             <code>
                                 {{ row.node.data.route }}
                             </code>
