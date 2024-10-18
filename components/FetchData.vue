@@ -47,6 +47,8 @@
             v-for="page in app.structure.items"
             :key="page.id"
             :header="page.title"
+            toggleable
+            collapsed
         >
             <pre>{{ JSON.stringify(page, null, 4) }}</pre>
         </Panel>
