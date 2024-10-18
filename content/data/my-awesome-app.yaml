@@ -1,20 +1,17 @@
-app: ## <- ab-app-organizer
+app:
     id: app-1
-    route: /app-1
     title: My Awesome App
-    structure: ## <- ab-tree (sl-tree)
-        inherit-deep:
-            context-defaults: app-items
+    structure:
         conf1: Foo
         conf2: Bar
-        items: ## <- sl-tree-items
-            - page:
+        items:
+            - element-type: page
               id: page-1
-              route: /page-1
               title: Page 1
               icon: file
+              route: /page-1
               items:
-                  - ab-group:
+                  - element-type: ab-group
                     id: id_ab-group_1
                     type: ab-group
                     title: A grouping as layout
@@ -23,43 +20,43 @@ app: ## <- ab-app-organizer
                         collapsible: true
                         noHeader: false
                     items:
-                        - sl-input:
+                        - element-type: sl-input
                           id: id_text_1
-                          label: Text input
-                          helpText: I'm a help text
                           type: text
                           title: A text input 1
+                          helpText: I'm a help text
+                          label: Text input
                           placeholder: I'm a text input
-                        - sl-input:
+                        - element-type: sl-input
                           id: id_email_1
-                          label: An email input
-                          helpText: Please type in your email
                           type: email
                           title: Email input 1
+                          helpText: Please type in your email
+                          label: An email input
                           placeholder: I'm an email input
-            - page:
+            - element-type: page
               id: page-2
-              route: /page-2
               title: Page 2
               icon: file
+              route: /page-2
               items:
-                  - ab-group:
+                  - element-type: ab-group
                     id: id_ab-group_2
                     type: ab-group
                     title: Grouping 1
                     settings:
                         collapsible: false
                     items:
-                        - sl-input:
+                        - element-type: sl-input
                           id: id_email_2
                           type: email
                           title: Email input 2
                           placeholder: I'm an email input
                           settings:
-                              disabled: true
                               clearable: true
+                              disabled: true
                               required: true
-                  - ab-group:
+                  - element-type: ab-group
                     id: id_ab-group_3
                     type: ab-group
                     title: Outer grouping
@@ -67,73 +64,66 @@ app: ## <- ab-app-organizer
                     settings:
                         collapsible: true
                     items:
-                        - ab-group:
-                          type: ab-group
+                        - element-type: ab-group
                           id: id_ab-group_4
+                          type: ab-group
                           title: Inner grouping 1
                           settings:
                               collapsible: true
                           items:
-                              - sl-input:
+                              - element-type: sl-input
                                 id: id_text_3
                                 type: text
                                 title: A text input
-                                label: Another text input
                                 helpText: I'm nested in multiple containers
+                                label: Another text input
                                 placeholder: I'm a text input
-                        - ab-group:
+                        - element-type: ab-group
                           id: id_ab-group_5
                           type: ab-group
                           title: Inner grouping 2
                           settings:
                               collapsible: true
                           items:
-                              - sl-input:
+                              - element-type: sl-input
                                 id: id_text_2
                                 type: text
                                 title: A text input
                                 placeholder: I'm a text input
-                              - sl-input:
+                              - element-type: sl-input
                                 id: id_email_3
                                 type: email
                                 title: Another email
                                 placeholder: I'm another email input
-            - page:
-              id: a-cool-page-id
-              title: A cool page
+            - element-type: page
+              id: id_page_1
+              title: My new Page
               icon: file
-              route: /a-cool-page
+              route: /my-new-page
               items:
                   - element-type: sl-input
                     id: id_text_1
                     type: text
                     title: New text
+                    helpText: z-index
                     placeholder: I'm a new text
                     settings:
                         clearable: false
                         disabled: false
                         readonly: false
                         required: false
-    permissions: TBD
-    search: TBD
+                  - element-type: sl-input
+                    id: id_password_1
+                    type: password
+                    title: New password
+                    layout: col-1
+                    placeholder: I'm a new password
+                    settings:
+                        clearable: false
+                        disabled: false
+                        passwordToggle: false
+                        readonly: false
+                        required: false
     menu: TBD
-
-## -------------------------------------------------------------------------- ##
-##                                  APP ITEMS                                 ##
-## -------------------------------------------------------------------------- ##
-app-items:
-    app:
-        title: App
-        icon: rocket-takeoff
-    page:
-        title: Page
-        icon: grid-1x2-fill
-    ab-group:
-        title: Container
-        icon: bounding-box-circles
-    ix-input:
-        title: Input (default)
-        icon: input-cursor-text
-    sl-input:
-        title: Shoelace Input
-        icon: input-cursor-text
+    search: TBD
+    permissions: TDB
