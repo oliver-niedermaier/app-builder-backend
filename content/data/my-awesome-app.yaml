@@ -5,13 +5,13 @@ app:
         conf1: Foo
         conf2: Bar
         items:
-            - element-type: page
+            - component: page
               id: page-1
               title: Page 1
               icon: file
               route: /page-1
               items:
-                  - element-type: ab-group
+                  - component: ab-group
                     id: id_ab-group_1
                     type: ab-group
                     title: A grouping as layout
@@ -20,34 +20,34 @@ app:
                         collapsible: true
                         noHeader: false
                     items:
-                        - element-type: sl-input
+                        - component: sl-input
                           id: id_text_1
                           type: text
                           title: A text input 1
                           helpText: I'm a help text
                           label: Text input
                           placeholder: I'm a text input
-                        - element-type: sl-input
+                        - component: sl-input
                           id: id_email_1
                           type: email
                           title: Email input 1
                           helpText: Please type in your email
                           label: An email input
                           placeholder: I'm an email input
-            - element-type: page
+            - component: page
               id: page-2
               title: Page 2
               icon: file
               route: /page-2
               items:
-                  - element-type: ab-group
+                  - component: ab-group
                     id: id_ab-group_2
                     type: ab-group
                     title: Grouping 1
                     settings:
                         collapsible: false
                     items:
-                        - element-type: sl-input
+                        - component: sl-input
                           id: id_email_2
                           type: email
                           title: Email input 2
@@ -56,7 +56,7 @@ app:
                               clearable: true
                               disabled: true
                               required: true
-                  - element-type: ab-group
+                  - component: ab-group
                     id: id_ab-group_3
                     type: ab-group
                     title: Outer grouping
@@ -64,44 +64,44 @@ app:
                     settings:
                         collapsible: true
                     items:
-                        - element-type: ab-group
+                        - component: ab-group
                           id: id_ab-group_4
                           type: ab-group
                           title: Inner grouping 1
                           settings:
                               collapsible: true
                           items:
-                              - element-type: sl-input
+                              - component: sl-input
                                 id: id_text_3
                                 type: text
                                 title: A text input
                                 helpText: I'm nested in multiple containers
                                 label: Another text input
                                 placeholder: I'm a text input
-                        - element-type: ab-group
+                        - component: ab-group
                           id: id_ab-group_5
                           type: ab-group
                           title: Inner grouping 2
                           settings:
                               collapsible: true
                           items:
-                              - element-type: sl-input
+                              - component: sl-input
                                 id: id_text_2
                                 type: text
                                 title: A text input
                                 placeholder: I'm a text input
-                              - element-type: sl-input
+                              - component: sl-input
                                 id: id_email_3
                                 type: email
                                 title: Another email
                                 placeholder: I'm another email input
-            - element-type: page
+            - component: page
               id: id_page_1
               title: My new Page
               icon: file
               route: /my-new-page
               items:
-                  - element-type: sl-input
+                  - component: sl-input
                     id: id_text_1
                     type: text
                     title: New text
@@ -112,7 +112,7 @@ app:
                         disabled: false
                         readonly: false
                         required: false
-                  - element-type: sl-input
+                  - component: sl-input
                     id: id_password_1
                     type: password
                     title: New password
