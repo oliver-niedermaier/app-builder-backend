@@ -30,13 +30,25 @@
                 show-gridlines
             >
                 <Column field="title" header="🏷️ Title" expander />
-                <Column field="type" header="🧬 Type" />
-                <Column field="id" header="🆔 ID" />
+                <Column field="type" header="🧬 Type">
+                    <template #body="row">
+                        <code>
+                            {{ row.node.data.id }}
+                        </code>
+                    </template>
+                </Column>
+                <Column field="id" header="🆔 ID">
+                    <template #body="row">
+                        <code>
+                            {{ row.node.data.id }}
+                        </code>
+                    </template>
+                </Column>
                 <Column field="route" header="🔗 Route">
                     <template #body="row">
-                        <a :href="row.node.data.route">{{
-                            row.node.data.route
-                        }}</a>
+                        <NuxtLink :to="row.node.data.route">
+                            {{ row.node.data.route }}
+                        </NuxtLink>
                     </template>
                 </Column>
             </TreeTable>
@@ -94,6 +106,11 @@ main > * {
 h1 {
     font-size: 1.5em;
     font-weight: bold;
+}
+
+code {
+    font-size: 0.9em;
+    opacity: 0.7;
 }
 
 ._dev-plain-html {
