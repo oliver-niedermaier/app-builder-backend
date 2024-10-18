@@ -98,6 +98,22 @@ app: ## <- ab-app-organizer
                                 type: email
                                 title: Another email
                                 placeholder: I'm another email input
+            - page:
+              id: id_page_1
+              title: A cool page
+              icon: file
+              route: /a-cool-page
+              items:
+                  - element-type: sl-input
+                    id: id_text_1
+                    type: text
+                    title: New text
+                    placeholder: I'm a new text
+                    settings:
+                        clearable: false
+                        disabled: false
+                        readonly: false
+                        required: false
     permissions: TBD
     search: TBD
     menu: TBD
