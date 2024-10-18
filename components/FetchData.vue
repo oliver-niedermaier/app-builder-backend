@@ -7,19 +7,6 @@
             {{ app.title }} <code>{{ app.id }}</code>
         </h1>
 
-        <!-- plain html -->
-        <div class="_dev-plain-html">
-            <ul>
-                <li v-for="page in app.structure.items" :key="page.id">
-                    <code> 🧬 {{ Object.keys(page)[0] }} </code>
-                    <code> 🆔 {{ page.id }} </code>
-                    <code> 🏷️ {{ page.title }} </code>
-                    <code> 🔗 {{ page.route }} </code>
-                </li>
-            </ul>
-        </div>
-
-        <!-- prime vue component -->
         <Fieldset legend="app-structure">
             <TreeTable
                 :value="treeNodes"
@@ -77,7 +64,11 @@
             toggleable
             collapsed
         >
-            <pre>{{ JSON.stringify(page, null, 4) }}</pre>
+            <ComponentFactory :items="page.items" />
+
+            <Fieldset legend="⚙️ json" :toggleable="true" collapsed>
+                <pre>{{ JSON.stringify(page, null, 4) }}</pre>
+            </Fieldset>
         </Panel>
     </main>
 </template>
@@ -112,7 +103,7 @@ const treeNodes = ref(generateTreeNodes(app.structure.items));
 <!-- ========================================================================== -->
 <style scoped>
 main {
-    padding: 1em;
+    padding: 0.5em;
 }
 main > * {
     margin-bottom: 1em;
