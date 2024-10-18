@@ -25,8 +25,13 @@ app:
                           type: text
                           title: A text input 1
                           helpText: I'm a help text
-                          label: Text input
+                          label: Text inputdfdf
                           placeholder: I'm a text input
+                          settings:
+                              clearable: false
+                              disabled: false
+                              readonly: false
+                              required: false
                         - component: sl-input
                           id: id_email_1
                           type: email
@@ -34,6 +39,11 @@ app:
                           helpText: Please type in your email
                           label: An email input
                           placeholder: I'm an email input
+                          settings:
+                              clearable: false
+                              disabled: false
+                              readonly: false
+                              required: false
             - component: page
               id: page-2
               title: Page 2
@@ -44,6 +54,7 @@ app:
                     id: id_ab-group_2
                     type: ab-group
                     title: Grouping 1
+                    layout: col-1
                     settings:
                         collapsible: false
                     items:
@@ -68,6 +79,7 @@ app:
                           id: id_ab-group_4
                           type: ab-group
                           title: Inner grouping 1
+                          layout: col-1
                           settings:
                               collapsible: true
                           items:
@@ -78,6 +90,11 @@ app:
                                 helpText: I'm nested in multiple containers
                                 label: Another text input
                                 placeholder: I'm a text input
+                                settings:
+                                    clearable: false
+                                    disabled: false
+                                    readonly: false
+                                    required: false
                         - component: ab-group
                           id: id_ab-group_5
                           type: ab-group
@@ -90,40 +107,21 @@ app:
                                 type: text
                                 title: A text input
                                 placeholder: I'm a text input
+                                settings:
+                                    clearable: false
+                                    disabled: false
+                                    readonly: false
+                                    required: false
                               - component: sl-input
                                 id: id_email_3
                                 type: email
                                 title: Another email
                                 placeholder: I'm another email input
-            - component: page
-              id: id_page_1
-              title: My new Page
-              icon: file
-              route: /my-new-page
-              items:
-                  - component: sl-input
-                    id: id_text_1
-                    type: text
-                    title: New text
-                    helpText: z-index
-                    placeholder: I'm a new text
-                    settings:
-                        clearable: false
-                        disabled: false
-                        readonly: false
-                        required: false
-                  - component: sl-input
-                    id: id_password_1
-                    type: password
-                    title: New password
-                    layout: col-1
-                    placeholder: I'm a new password
-                    settings:
-                        clearable: false
-                        disabled: false
-                        passwordToggle: false
-                        readonly: false
-                        required: false
+                                settings:
+                                    clearable: false
+                                    disabled: false
+                                    readonly: false
+                                    required: false
     menu: TBD
     search: TBD
     permissions: TDB
