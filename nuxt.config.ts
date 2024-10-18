@@ -12,4 +12,9 @@ export default defineNuxtConfig({
             },
         },
     },
+    vue: {
+        compilerOptions: {
+            isCustomElement: (tag) => tag === "ix-input",
+        },
+    },
 });
