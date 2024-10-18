@@ -2,8 +2,11 @@
     <div>
         <FetchData />
 
-        <NuxtRouteAnnouncer />
-        <NuxtWelcome :title="appTitle" :app-name="appName" />
+        <NuxtWelcome
+            :title="appTitle"
+            :app-name="appName"
+            style="display: none"
+        />
     </div>
 </template>
 
