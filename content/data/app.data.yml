@@ -99,7 +99,7 @@ app: ## <- ab-app-organizer
                                 title: Another email
                                 placeholder: I'm another email input
             - page:
-              id: id_page_1
+              id: a-cool-page-id
               title: A cool page
               icon: file
               route: /a-cool-page
