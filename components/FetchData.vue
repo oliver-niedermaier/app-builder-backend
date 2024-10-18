@@ -45,10 +45,22 @@
                     </template>
                 </Column>
                 <Column field="route" header="🔗 Route">
-                    <template #body="row">
-                        <NuxtLink :to="row.node.data.route">
-                            {{ row.node.data.route }}
-                        </NuxtLink>
+                    <template v-if="row.node.data.route" #body="row">
+                        <div style="display: grid; justify-items: start">
+                            <code>
+                                {{ row.node.data.route }}
+                            </code>
+
+                            <Button as="a" :href="row.node.data.route" link>
+                                ↬ href
+                            </Button>
+
+                            <Button link>
+                                <NuxtLink :to="row.node.data.route">
+                                    ⇢ nuxt-link
+                                </NuxtLink>
+                            </Button>
+                        </div>
                     </template>
                 </Column>
             </TreeTable>
@@ -72,7 +84,7 @@
 <!-- ========================================================================== -->
 <script setup>
 // import app data yaml file
-const { app } = await queryContent("data/app.data").findOne();
+const { app } = await queryContent("data/my-awesome-app").findOne();
 
 // function to transform items into TreeNode format
 // only needed to fit to primevue TreeTable component
@@ -82,7 +94,7 @@ function generateTreeNodes(items) {
         data: {
             id: item.id,
             title: item.title,
-            type: Object.keys(item)[0],
+            type: item.component || Object.keys(item)[0],
             route: item.route,
         },
         children: item.items ? generateTreeNodes(item.items) : null,
