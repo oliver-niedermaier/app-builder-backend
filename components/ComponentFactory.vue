@@ -12,6 +12,7 @@
             <ix-input
                 v-else-if="
                     item.type === 'text' ||
+                    item.type === 'number' ||
                     item.type === 'email' ||
                     item.type === 'password'
                 "
@@ -22,6 +23,11 @@
                     v-if="item.type === 'password'"
                     :v-model="item.id + '_val'"
                     :feedback="false"
+                />
+                <InputNumber
+                    v-else-if="item.type === 'number'"
+                    :v-model="item.id + '_val'"
+                    :placeholder="item.placeholder"
                 />
                 <InputText
                     v-else
