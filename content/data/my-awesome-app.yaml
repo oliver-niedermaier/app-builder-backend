@@ -13,7 +13,6 @@ app:
               items:
                   - component: ab-group
                     id: id_ab-group_1
-                    type: ab-group
                     title: A grouping as layout
                     layout: col-2
                     settings:
@@ -25,13 +24,13 @@ app:
                           type: text
                           title: A text input 1
                           helpText: I'm a help text
-                          label: Text inputdfdf
+                          label: Text input
                           placeholder: I'm a text input
                           settings:
                               clearable: false
                               disabled: false
                               readonly: false
-                              required: false
+                              required: true
                         - component: sl-input
                           id: id_email_1
                           type: email
@@ -40,88 +39,51 @@ app:
                           label: An email input
                           placeholder: I'm an email input
                           settings:
-                              clearable: false
+                              clearable: true
                               disabled: false
                               readonly: false
                               required: false
             - component: page
-              id: page-2
-              title: Page 2
+              id: id_page_1
+              title: Home
               icon: file
-              route: /page-2
+              route: /home
               items:
                   - component: ab-group
-                    id: id_ab-group_2
-                    type: ab-group
-                    title: Grouping 1
+                    id: id_ab-group_1
+                    title: New ab-group
                     layout: col-1
                     settings:
                         collapsible: false
+                        noHeader: false
                     items:
                         - component: sl-input
-                          id: id_email_2
-                          type: email
-                          title: Email input 2
-                          placeholder: I'm an email input
+                          id: id_text_1
+                          type: text
+                          title: Simple text field
+                          helpText: Just add some simple text
+                          label: Simple text
+                          maxlength: 10
+                          placeholder: Add some text
                           settings:
                               clearable: true
-                              disabled: true
+                              disabled: false
+                              readonly: false
                               required: true
-                  - component: ab-group
-                    id: id_ab-group_3
-                    type: ab-group
-                    title: Outer grouping
-                    layout: col-2
-                    settings:
-                        collapsible: true
-                    items:
-                        - component: ab-group
-                          id: id_ab-group_4
-                          type: ab-group
-                          title: Inner grouping 1
-                          layout: col-1
+                        - component: sl-input
+                          id: id_number_1
+                          type: number
+                          title: New number
+                          label: Number field
+                          max: 8
+                          min: 2
+                          placeholder: ""
                           settings:
-                              collapsible: true
-                          items:
-                              - component: sl-input
-                                id: id_text_3
-                                type: text
-                                title: A text input
-                                helpText: I'm nested in multiple containers
-                                label: Another text input
-                                placeholder: I'm a text input
-                                settings:
-                                    clearable: false
-                                    disabled: false
-                                    readonly: false
-                                    required: false
-                        - component: ab-group
-                          id: id_ab-group_5
-                          type: ab-group
-                          title: Inner grouping 2
-                          settings:
-                              collapsible: true
-                          items:
-                              - component: sl-input
-                                id: id_text_2
-                                type: text
-                                title: A text input
-                                placeholder: I'm a text input
-                                settings:
-                                    clearable: false
-                                    disabled: false
-                                    readonly: false
-                                    required: false
-                              - component: sl-input
-                                id: id_email_3
-                                type: email
-                                title: Another email
-                                placeholder: I'm another email input
-                                settings:
-                                    clearable: false
-                                    disabled: false
-                                    readonly: false
-                                    required: false
+                              clearable: false
+                              disabled: false
+                              noSpinButtons: false
+                              readonly: true
+                              required: false
     menu: TBD
     search: TBD
     permissions: TDB

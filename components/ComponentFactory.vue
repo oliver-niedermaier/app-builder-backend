@@ -4,9 +4,9 @@
 <template>
     <main>
         <div v-for="item in items" :key="item.id" class="app-page">
-            <!-- <code>{{ item.component }}</code> -->
+            <!-- <code>🧬 {{ item.component }}</code> -->
 
-            <InputText v-if="!item.type" v-model="item.id" />
+            <InputText v-if="!item.component" :v-model="item.id + '_val'" />
 
             <!-- INPUT -->
             <ix-input
@@ -20,13 +20,13 @@
 
                 <Password
                     v-if="item.type === 'password'"
-                    v-model="item.id"
+                    :v-model="item.id + '_val'"
                     :feedback="false"
                 />
                 <InputText
                     v-else
                     id="item.id"
-                    v-model="item.id"
+                    :v-model="item.id + '_val'"
                     :placeholder="item.placeholder"
                 />
 
